@@ -613,9 +613,9 @@ footer p {
     }
 
     .opening h1 {
-        font-size: 8rem;
-        
-        
+        font-size: 8rem; 
+        animation: fade-in 1s ease-in .5s;
+        animation-fill-mode: forwards;
     }
     .opening h1 p {
         font-size: 2.4rem;
@@ -626,6 +626,26 @@ footer p {
     }
     .opening h2 {
         scale: 1.5;
+        animation: fade-in 1s ease-in 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .opening h1 , .opening h2 {
+        background: linear-gradient(90deg, rgba(10,10,16,1) 0%, rgba(44,44,82,1) 41%, rgba(10,10,28,1) 100%);
+        width: fit-content;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        
     }
 
   
@@ -634,7 +654,9 @@ footer p {
         position: absolute;
         bottom: 3vh;
         transition: .3s ease-in-out;
-        
+        animation: fade-in 1s ease-in 2s;
+        opacity: 0;
+        animation-fill-mode: forwards;
     }
 
    
@@ -656,12 +678,21 @@ footer p {
     .services h1::after {
             padding: 0;
     }
+    .services-heading{
+        transform: translateX(-500%)
+    }
     .ilustrations {
         scale: 2;
         width:700px;
         margin-top:70px;
         margin-bottom: 50px;
+        transform: translateX(150%);
         
+    }
+
+    .slide-in-services {
+        transform: translateX(0%);
+        transition: 1.5s ;
     }
     .i-wrapper {
         flex-basis: 50%;
@@ -673,7 +704,7 @@ footer p {
         width: 55px;
     }
     .i-wrapper p {
-        font-size: 1rem;
+        font-size: .6rem;
     }
     .services button {
         margin-bottom: 100px;
@@ -753,7 +784,7 @@ footer p {
         border-color: rgb(255, 102, 0);
     }
     .wycena p{
-        font-size: 2rem;
+        font-size: 1.5rem;
         width: 50vw
     }
     .wycena button {
@@ -826,7 +857,7 @@ footer p {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin:0 auto;
+        margin:100px auto 0;
         
     }
 

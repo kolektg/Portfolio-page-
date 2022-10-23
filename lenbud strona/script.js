@@ -23,7 +23,26 @@ const swiper = new Swiper('.swiper', {
   let menu = document.querySelector('.menu');
   let close_menu = document.querySelector('#close-menu');
   let menu_buttons = document.querySelectorAll('a[href^="#"');
+  let services_icons = document.querySelector('.ilustrations');
+  let services_h1 = document.querySelector('.services h1');
   
+  window.addEventListener('scroll', () => {
+    let mql = window.matchMedia('(min-width: 1000px)');
+    const scrolled = window.scrollY;
+    
+    
+    if (!mql.matches){
+      return
+    }
+    if (scrolled > 300) {
+      services_icons.classList.add('slide-in-services')
+      services_h1.classList.add('slide-in-services')
+      
+    }
+  });
+  
+
+
   // HIDING MENU WHEN SCROLLING****************************************
   var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -129,3 +148,5 @@ document.addEventListener("click", (event) => {
   }
   
 })
+
+  

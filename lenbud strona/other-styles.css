@@ -21,18 +21,32 @@
 }
 .i-wrapper { 
     flex-direction: column;
+    
 }
 .ilustrations {
     flex-direction: column;
+    transform: translateX(0);
 }
 .services p {
     width: 80vw;
     text-align: justify;
     order: 3;
-    color: rgb(0, 0, 110);
+    color: #0A0A1C;
 }
 .services h1 {
-    color: rgb(0, 0, 110);
+    color: #0A0A1C;
+    margin-top: 0px;
+}
+.services-heading{
+    transform: translateX(0%)
+}
+.ilustrations {
+    scale: 2;
+    width:700px;
+    margin-top:70px;
+    margin-bottom: 50px;
+    
+    
 }
 
 .i-wrapper:last-of-type img   {
@@ -55,7 +69,7 @@
  }
 
  .i-wrapper p {
-    
+    font-size: 1rem;
     order: 3;
  }
 .services h3 {
@@ -125,6 +139,10 @@
     background: url(/images/ac-about.webp);
     background-size: cover;
 
+}
+
+footer a{
+    width: 300px;
 }
 
 @media screen and (min-width:1000px) {
