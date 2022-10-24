@@ -35,15 +35,15 @@
 }
 .services h1 {
     color: #0A0A1C;
-    margin-top: 0px;
+    margin-top: -40px;
 }
 .services-heading{
     transform: translateX(0%)
 }
 .ilustrations {
-    scale: 2;
-    width:700px;
-    margin-top:70px;
+    
+    
+   
     margin-bottom: 50px;
     
     
