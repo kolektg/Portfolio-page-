@@ -23,30 +23,73 @@ const swiper = new Swiper('.swiper', {
   let menu = document.querySelector('.menu');
   let close_menu = document.querySelector('#close-menu');
   let menu_buttons = document.querySelectorAll('a[href^="#"');
-  let services_icons = document.querySelector('.ilustrations');
-  let services_h1 = document.querySelector('.services h1');
+  // let services_icons = document.querySelector('.ilustrations');
+  // let services_h1 = document.querySelector('.services h1');
   
-  window.addEventListener('scroll', () => {
-    let mql = window.matchMedia('(min-width: 1000px)');
-    const scrolled = window.scrollY;
+
+
+//******************* PARALAX ****************************//
+
+let main_photo = document.getElementById('main-photo');
+let about_us_photo = document.querySelector('.about-us-photo');
+let mql = window.matchMedia('(min-width: 1300px)');
+
+  
+window.addEventListener('scroll' ,() => {
+  let value = window.scrollY;
+  
+    if (mql.matches && main_photo !== null) {
+      window.requestAnimationFrame(() => {
+      main_photo.style.transform = `translateY(${value * .35 + 'px'} )`;
+    })
+    }else return
+  
+ 
+  
+  if (value > 1300  && mql.matches) {
+    window.requestAnimationFrame(() => {
+    about_us_photo.style.transform = `translateY(${(value - 2249) * .45 + 'px'} )`;
+  })
+  }else return
+  
+
+})
+
+  
+  // window.addEventListener('scroll', () => {
+  //   let mql = window.matchMedia('(min-width: 1000px)');
+  //   const scrolled = window.scrollY;
     
     
-    if (!mql.matches){
-      return
-    }
-    if (scrolled > 300) {
-      services_icons.classList.add('slide-in-services')
-      services_h1.classList.add('slide-in-services')
+  //   if (!mql.matches){
+  //     return
+  //   }
+  //   if (scrolled > 300) {
+  //     services_icons.classList.add('slide-in-services')
+  //     services_h1.classList.add('slide-in-services')
       
-    }
-  });
+  //   }
+  // });
   
+
+
+const observer = new IntersectionObserver((entries)=> {
+  entries.forEach((entry)=> {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show')
+    }
+  })
+})
+
+const hiddenEl = document.querySelectorAll('.hide')
+
+hiddenEl.forEach((el) => observer.observe(el))
 
 
   // HIDING MENU WHEN SCROLLING****************************************
-  var prevScrollpos = window.pageYOffset;
+  let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
+let currentScrollPos = window.pageYOffset;
 
   
   
@@ -103,28 +146,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-//******************* PARALAX ****************************//
-
-let main_photo = document.getElementById('main-photo');
-let about_us_photo = document.querySelector('.about-us-photo');
-
-window.addEventListener('scroll' ,() => {
-  let mql = window.matchMedia('(min-width: 1300px)');
-  let value = window.scrollY;
-  if (mql.matches === true) {
-    main_photo.style.transform = `translateY(${value * .55 + 'px'} )`;
-        
-  }else return
-
-  if (value > 1500  && mql.matches === true ) {
-    about_us_photo.style.transform = `translateY(${(value - 2249) * .45 + 'px'} )`;
-  }else return
-  
-
-})
-
-
 // ***************** PAROWNICA PHOTO ***************************// 
+
+
+
 
 let service_button = document.querySelector('.parownica');
 let service_photo = document.querySelector('.parownica-photo')
@@ -132,21 +157,24 @@ let service_photo = document.querySelector('.parownica-photo')
 service_button.addEventListener('click', () => {
   let mql = window.matchMedia('(max-width: 1200px)');
   
-  service_photo.style.scale = "2.3"
+  service_photo.style.transform = " scale(2.3)"
   if (mql.matches === true) {
-    service_photo.style.scale = "1.3"
+    service_photo.style.transform = "scale(1.3)"
   }return
     
 })
+
+
+
 
 document.addEventListener("click", (event) => {
   // If user clicks inside the element, do nothing
   if (event.target.closest(".parownica")) return
   // If user clicks outside the element, hide it!
-  if (service_photo.style.scale > 1) {
-    service_photo.style.scale = "0"
-  }
+  
+    service_photo.style.transform = "scale(0)"
+  
   
 })
 
-  
+  //// CONTACT FORM //////

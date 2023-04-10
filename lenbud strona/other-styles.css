@@ -1,4 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    font-family: 'Merriweather', serif;    
+    font-display: swap;
+}
 
 .menu-icon {
     height: 60px;
@@ -11,14 +18,26 @@
     z-index: 4;
 }
 
+
 /* SERVICES */
 
 .services {
-    border-top: 40px solid white;
-    background-color: white;
-     
+    
+    
+    background: url(images/services-bg.jpg) , rgba(255, 255, 255, 0.85);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: 15%;
+    background-position-y: -30vh;
+    background-attachment: fixed;
+   
+}
+.services-call {
+    color: rgb(255, 102, 0);
+    font-size: 1.3rem;
     
 }
+
 .i-wrapper { 
     flex-direction: column;
     
@@ -29,21 +48,22 @@
 }
 .services p {
     width: 80vw;
-    text-align: justify;
+    text-align: left;
     order: 3;
     color: #0A0A1C;
 }
 .services h1 {
     color: #0A0A1C;
-    margin-top: -40px;
+    margin-top: 40px;
+    padding-top: 30px;
 }
 .services-heading{
     transform: translateX(0%)
 }
 .ilustrations {
     
-    
-   
+    justify-content: space-evenly;
+   max-width: 1400px;
     margin-bottom: 50px;
     
     
@@ -58,9 +78,9 @@
 }
 
 .i-wrapper img {
-    scale: 2.2;
+    transform: scale(2.2);
     order: 2;
-    filter: invert(10%) sepia(86%) saturate(3007%) hue-rotate(235deg) brightness(85%) contrast(131%);
+    filter: brightness(0) saturate(100%) invert(5%) sepia(8%) saturate(6950%) hue-rotate(210deg) brightness(103%) contrast(101%);
 }
 
  .i-wrapper h3 {
@@ -94,11 +114,17 @@
 .parownica-photo {
     width: 300px;
     height: 300px;
-    background: url(/images/parownica-photo.jpg);
+    background: url(images/parownica-photo.jpg);
     background-size: cover;
     position: absolute;
     transition: .2s ease-in-out;
-    scale:0;
+    z-index: 10;
+    transform: scale(0);
+}
+.container {
+    width: 110%;
+    background: rgba(230, 230, 230, 0.7);
+    margin-bottom: -9px;
 }
 
 /* ABOUT-US */
@@ -111,11 +137,15 @@
     background-color: rgb(255, 255, 255);
     color: rgb(31, 31, 31);
     height: fit-content;
-    
+    background: url(images/services-bg.jpg) , rgba(214, 214, 214, 0.85);
+    background-blend-mode: darken;
+}
+.about-us div {
+    max-width: 900px;
 }
 .about-us h1 {
     margin-top: 10px;
-    color: rgb(0, 0, 110);
+    color: #0A0A1C;
     
 }
 
@@ -126,7 +156,7 @@
     padding-bottom: 40px;
     margin: 0 auto;
     font-weight: 500;
-    color: rgb(0, 0, 110);
+    color: #0A0A1C;
 }
 
 
@@ -148,6 +178,13 @@ footer a{
 @media screen and (min-width:1000px) {
 
 
+    .container {
+        width: 60%;
+        background: rgb(236, 236, 236);
+        margin-bottom: -9px;
+    }
+
+    
 
     .menu-icon {
         display: none;
@@ -155,6 +192,7 @@ footer a{
 
   .services {
     gap:0;
+    z-index: 0;
   }
  .services h1::after {
    margin-top: 20px;
@@ -162,18 +200,18 @@ footer a{
 
  .ilustrations {
     scale: 1;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    width: 80vw;
+    width: auto;
     align-items: center;
     margin-top: 0;
     
     
  }
  .i-wrapper {
-    width: 33%;
+    
     justify-content: flex-start;
-    min-height:400px ;
+    
     gap: 50px;
  }
 
@@ -187,7 +225,7 @@ footer a{
  }
 
  .i-wrapper p {
-    width: 25vw;
+    width: 35vw;
     order: 3;
  }
 
@@ -201,14 +239,22 @@ footer a{
 /* ****************************ABOUT US PAGE***************** */
 .about-us {
     flex-direction: column;
+    height: 110vh;
+    
 }
 
+#about-us {
+    padding-top: 100px;
+}
 
 .about-us div {
     display: flex;
     flex-direction: row;
     margin: 0 auto 100px;
-    height: 700px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+    max-width: 1200px;
     gap: 100px;
     padding: 25px;
 }
@@ -218,21 +264,24 @@ footer a{
    font-weight: 500;
    line-height: 180%;
    padding: 0;
-   font-size: 1.2rem;
-   flex-basis: 40%;
+   font-size: 1rem;
+   flex-basis: 50%;
    height: fit-content;
    
    align-self: center;
    
 }
 .about-us div div {
-    flex-basis: 70%;
+    flex-basis: 50%;
     width: 70vw;
-    height: auto;
-    background: url(/images/ac-about.webp);
+    
+    background: url(images/ac-about.webp);
     background-size: cover;
     background-position: center;
 
 }
-
+footer {
+    position: fixed;
+    bottom: 0;
+}
 }
