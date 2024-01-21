@@ -13,7 +13,6 @@ body {
     background-color: #F8F8F8;
     overflow-x: hidden;
     line-height: 1.5;
-    min-height: 100%;
 }
 
 #services, #about-us, #reviews , #contact, #opening {
@@ -810,8 +809,8 @@ footer p {
 
     .about-us button {
         height: fit-content;
-        margin-top: 0;
-
+        margin-top: 10px;
+        transition: .2s;
         
     }
 
@@ -925,9 +924,7 @@ footer p {
     
     
 }
-.h1-wrapper {
-    transform: translateX(100%);
-}
+
 .show {
     opacity: 1;
     transform: translateX(0);
